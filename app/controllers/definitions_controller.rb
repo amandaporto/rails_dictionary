@@ -5,6 +5,8 @@ class DefinitionsController < ApplicationController
   # GET /definitions.json
   def index
     @definitions = Definition.all
+    @definition = Definition.search(params[:search])
+
   end
 
   # GET /definitions/1

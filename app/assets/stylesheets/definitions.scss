@@ -9,6 +9,14 @@ body {
 h1 {
   color: #6CBCB8;
   padding-bottom: 20px;
+  border-bottom: 2px #E3E7E9 solid;
+  width: 50%;
+  min-width: 450px;
+}
+h3 {
+  color: #38474E;
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 a{
   color: #38474E;
@@ -31,8 +39,6 @@ a:active {
   color: #38474E;
 }
 table {
-  border-top: 2px #E3E7E9 solid;
-  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -54,5 +60,5 @@ tbody {
   }
 }
 form {
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
