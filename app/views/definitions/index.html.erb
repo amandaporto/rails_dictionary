@@ -1,58 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<% if @definition.present? %>
-  <h1>Search Results</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Word</th>
-        <th>Meaning</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <% @definition.each do |defin| %>
-        <tr>
-          <td><%= defin.word %></td>
-          <td><%= defin.meaning %></td>
-      <% end %>
-    </tbody>
-  </table>
-<%= link_to 'Back', definitions_path %>
+<% if @search %>
+  <h1>Definitions Found</h1>
 <% else %>
-
   <h1>Listing Definitions</h1>
-  <table>
-    <thead>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Meaning</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @definitions.each do |definition| %>
       <tr>
-        <th>Word</th>
-        <th>Meaning</th>
-        <th colspan="3"></th>
+        <td><%= definition.word %></td>
+        <td><%= definition.meaning %></td>
+        <td><%= link_to 'Show', definition %></td>
+        <td><%= link_to 'Edit', edit_definition_path(definition) %></td>
+        <td><%= link_to 'Destroy', definition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @definitions.each do |definition| %>
-        <tr>
-          <td><%= definition.word %></td>
-          <td><%= definition.meaning %></td>
-          <td><%= link_to 'Show', definition %></td>
-          <td><%= link_to 'Edit', edit_definition_path(definition) %></td>
-          <td><%= link_to 'Destroy', definition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<br>
 
-  <br>
+<%= link_to 'New Definition', new_definition_path %>
 
-  <%= link_to 'New Definition', new_definition_path %>
-
-  <br>
-  <h3> Need to find a word?</h3>
-  <%= form_tag(definitions_path, method: "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Definitions" %>
-  <%= submit_tag "Search" %>
-  <% end %>
+<br>
+<h3> Need to find a word?</h3>
+<%= form_tag(search_definitions_path, method: "get") do %>
+<%= text_field_tag :search, nil, placeholder: "Search Definitions" %>
+<%= submit_tag "Search" %>
 <% end %>

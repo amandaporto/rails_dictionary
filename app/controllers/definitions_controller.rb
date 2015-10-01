@@ -5,8 +5,13 @@ class DefinitionsController < ApplicationController
   # GET /definitions.json
   def index
     @definitions = Definition.all
-    @definition = Definition.search(params[:search])
+  end
 
+  def search
+    @search = params[:search]
+    @definitions = Definition.where("word LIKE ?", "%#{@search}%")
+
+    render :index
   end
 
   # GET /definitions/1
@@ -71,6 +76,6 @@ class DefinitionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def definition_params
-      params.require(:definition).permit(:word, :meaning)
+      params.require(:definition).permit(:word, :meaning, :search)
     end
 end
