@@ -11,5 +11,15 @@
   <%= @definition.meaning %>
 </p>
 
+<p>
+  <strong>Part of Speech:</strong>
+  <%= @definition.part_of_speech %>
+</p>
+
+<p>
+  <strong>Example:</strong>
+  <%= @definition.example %>
+</p>
+
 <%= link_to 'Edit', edit_definition_path(@definition) %> |
 <%= link_to 'Back', definitions_path %>

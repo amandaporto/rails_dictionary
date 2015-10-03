@@ -19,6 +19,14 @@
     <%= f.label :meaning %><br>
     <%= f.text_field :meaning %>
   </div>
+  <div class="field">
+    <%= f.label :part_of_speech %><br>
+    <%= f.select :part_of_speech, ["noun","verb","pronoun","adjective","adverb","preposition","conjunction","interjection"] %>
+  </div>
+  <div class="field">
+    <%= f.label :example %><br>
+    <%= f.text_field :example %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -2,9 +2,8 @@
 
 
 <% if @search %>
-  <h1>Definitions Found</h1>
+  <h3>Definitions Found</h3>
 <% else %>
-  <h1>The Non-Tech Dictionary for Techy Terms</h1>
   <h3>Listing Definitions</h3>
 <% end %>
 
@@ -13,6 +12,8 @@
     <tr>
       <th>Word</th>
       <th>Meaning</th>
+      <th>Part of Speech</th>
+      <th>Example</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,21 +23,20 @@
       <tr>
         <td><%= definition.word %></td>
         <td><%= definition.meaning %></td>
+        <td><%= definition.part_of_speech %></td>
+        <td><%= definition.example %></td>
         <% if @search.nil? %>
           <td><%= link_to 'Show', definition %></td>
           <td><%= link_to 'Edit', edit_definition_path(definition) %></td>
           <td><%= link_to 'Destroy', definition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-<% if @search.nil? %>
-  <%= link_to 'New Definition', new_definition_path %>
-
-  <br>
+<!-- SHOULD WE STICK WITH ERB/RUBY OR DO FORMS IN HTML??? -->
+<!-- <% if @search.nil? %>
   <h3> Need to find a word?</h3>
   <%= form_tag(search_definitions_path, method: "get") do %>
   <%= text_field_tag :search, nil, placeholder: "Search Definitions" %>
@@ -44,4 +44,4 @@
   <% end %>
 <% else %>
   <%= link_to 'Back', definitions_path %>
-<% end %>
+<% end %> -->

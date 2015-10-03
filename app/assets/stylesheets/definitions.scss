@@ -2,44 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  padding: 20px;
-  background-color: #f9fafa;
-}
 h1 {
   color: #6CBCB8;
   padding-bottom: 20px;
   border-bottom: 2px #E3E7E9 solid;
-  width: 50%;
-  min-width: 650px;
+  padding-left: 50px;
 }
 h3 {
-  color: #38474E;
+  color: #6CBCB8;
   margin-top: 50px;
   margin-bottom: 0;
+  margin-left: 50px;
 }
-a{
-  color: #38474E;
-  background-color: #E3E7E9;
-  padding: 4px 8px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 3px #38474E;
-  text-decoration: none;
-  font-size: 10px;
-}
-a:visited {
-  color: #38474E;
-}
-a:hover {
-  color: #E3E7E9;
-  background-color: #38474E;
-  box-shadow: none;
-}
-a:active {
-  color: #38474E;
-}
+
 table {
   padding-bottom: 20px;
+  margin-left: 50px;
 }
 
 thead {
