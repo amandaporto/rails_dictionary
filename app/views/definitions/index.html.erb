@@ -1,38 +1,51 @@
-<p id="notice"><%= notice %></p>
+  <div class="col-md-8">
+
+    <p id="notice"><%= notice %></p>
+
+    <% if @search %>
+      <h4>You searched for: <%= @search %></h4>
+    <% end %>
+
+    <% @definitions.each do |definition| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="word"><%= definition.word %>
+          <span class="edit_buttons"><% if @search.nil? %>
+            <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
+            <%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %>
+            <%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %>
+          </span></p>
+          <% end %>
+
+        </p>
+        <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+        <ol>
+          <li><%= definition.meaning %></li>
+          <p class="example">"<%= definition.example %>"</p>
+        </ol>
+      </div>
+    </div>
+    <% end %>
+
+  </div> <!-- Main content -->
+
+  <div class="sidebar col-md-4">
+    <h2> Discover a New Word </h2>
+    <%definition = @definitions.sample %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="word"><%= definition.word %></p>
+
+        </p>
+        <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+        <ol>
+          <li><%= definition.meaning %></li>
+          <p class="example">"<%= definition.example %>"</p>
+        </ol>
+      </div>
+    </div>
 
 
-<% if @search %>
-  <h3>Definitions Found</h3>
-<% else %>
-  <h3>Listing Definitions</h3>
-<% end %>
-
-<% @definitions.each do |definition| %>
-<div class="panel panel-default">
-  <div class="panel-body">
-    <p><%= definition.word %></p>
-    <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
-    <ol>
-      <li><%= definition.meaning %></li>
-      <p class="example">"<%= definition.example %>"</p>
-    </ol>
-      <% if @search.nil? %>
-        <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
-        <%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %>
-        <%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %>
-      <% end %>
-  </div>
-</div>
-<% end %>
 
 
-<!-- SHOULD WE STICK WITH ERB/RUBY OR DO FORMS IN HTML??? -->
-<!-- <% if @search.nil? %>
-  <h3> Need to find a word?</h3>
-  <%= form_tag(search_definitions_path, method: "get") do %>
-  <%= text_field_tag :search, nil, placeholder: "Search Definitions" %>
-  <%= submit_tag "Search" %>
-  <% end %>
-<% else %>
-  <%= link_to 'Back', definitions_path %>
-<% end %> -->
+  </div> <!-- Sidebar -->

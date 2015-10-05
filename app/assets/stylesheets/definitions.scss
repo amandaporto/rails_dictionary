@@ -2,52 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  color: #6CBCB8;
-  padding-bottom: 20px;
-  border-bottom: 2px #E3E7E9 solid;
-  padding-left: 50px;
-}
-h3 {
-  color: #6CBCB8;
-  margin-top: 50px;
-  margin-bottom: 0;
-  margin-left: 50px;
-}
-
-table {
-  padding-bottom: 20px;
-  margin-left: 50px;
-}
-
-thead {
-  th {
-  color: #1F2F38;
-  padding: 10px 80px 10px 0;
-  font-style: italic;
-  }
-}
-
-tbody {
-  th {
-    padding-bottom: 10px;
-  }
-  td {
-    padding: 5px 10px 8px 0;
-    border-bottom: 1px solid #E3E7E9;
-  }
-}
 form {
   padding: 20px 0;
 }
+footer {
+  background-color: #94CE5F;
+  height: 100px;
+  padding-top: 20px;
+  border-top: solid 2px #DEDEDE;
+  clear: both;
+  margin-top: 50px;
+}
+
 .example {
   font-style: italic;
   color: gray;
-  padding: 5px 0 ;
+  padding: 5px 0 10px 0;
 }
 .part_of_speech {
   font-size: 12px;
   font-style: italic;
   font-weight: bold;
-
+}
+.word {
+  font-size: 20px;
+  color: #94CE5F;
+  font-weight: bold;
+}
+.edit_buttons {
+  float: right;
+}
+.edit_buttons > a:hover {
+  color: #94CE5F;
+  text-decoration: none;
+}
+.sidebar {
+  border-left: 5px solid #eee;
+  color: #281805;
+}
+.sidebar > h2 {
+  text-align: center;
 }
