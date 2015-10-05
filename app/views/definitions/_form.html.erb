@@ -11,23 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+  <div class=" form-group">
     <%= f.label :word %><br>
     <%= f.text_field :word %>
   </div>
-  <div class="field">
+  <div class=" form-group">
     <%= f.label :meaning %><br>
     <%= f.text_field :meaning %>
   </div>
-  <div class="field">
+  <div class=" form-group">
     <%= f.label :part_of_speech %><br>
     <%= f.select :part_of_speech, ["noun","verb","pronoun","adjective","adverb","preposition","conjunction","interjection"] %>
   </div>
-  <div class="field">
+  <div class=" form-group">
     <%= f.label :example %><br>
-    <%= f.text_field :example %>
+    <%= f.text_area :example, rows:4 %>
   </div>
-  <div class="actions">
+  <div class="btn btn-default">
     <%= f.submit %>
   </div>
 <% end %>

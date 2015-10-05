@@ -26,9 +26,9 @@
         <td><%= definition.part_of_speech %></td>
         <td><%= definition.example %></td>
         <% if @search.nil? %>
-          <td><%= link_to 'Show', definition %></td>
-          <td><%= link_to 'Edit', edit_definition_path(definition) %></td>
-          <td><%= link_to 'Destroy', definition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %></td>
+          <td><%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %></td>
+          <td><%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></td>
         <% end %>
 
       </tr>
