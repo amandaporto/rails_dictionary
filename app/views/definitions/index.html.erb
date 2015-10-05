@@ -10,12 +10,12 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <p class="word"><%= definition.word %>
-          <span class="edit_buttons"><% if @search.nil? %>
+          <span class="edit_buttons">
             <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
             <%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %>
             <%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %>
           </span></p>
-          <% end %>
+        
 
         </p>
         <p class ="part_of_speech"><%= definition.part_of_speech %></h5>

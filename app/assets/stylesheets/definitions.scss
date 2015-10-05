@@ -43,3 +43,28 @@ footer {
 .sidebar > h2 {
   text-align: center;
 }
+.add_form {
+  margin-left: 50px;
+}
+.show_word {
+  padding: 25px 0;
+}
+.show_word > p {
+  padding: 10px 0;
+}
+.buttons {
+  padding: 1px 10px;
+  color: #fff;
+  background-color: #281805;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #281805;
+}
+.buttons:hover {
+  padding: 1px 10px;
+  color: #281805;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #281805;
+}

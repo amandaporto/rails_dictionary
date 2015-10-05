@@ -56,3 +56,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 .wrapper {
   overflow: hidden;
 }
+label {
+  display: inline-block;
+  width: 100px;
+}
