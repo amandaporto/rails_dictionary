@@ -7,7 +7,29 @@
   <h3>Listing Definitions</h3>
 <% end %>
 
-<table>
+<% @definitions.each do |definition| %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p><%= definition.word %></p>
+    <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+    <ol>
+      <li><%= definition.meaning %></li>
+      <p class="example"><%= definition.example %> </p>
+    </ol>
+      <% if @search.nil? %>
+        <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
+        <%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %>
+        <%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %>
+      <% end %>
+  </div>
+</div>
+<% end %>
+
+
+
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Word</th>
@@ -34,7 +56,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 <!-- SHOULD WE STICK WITH ERB/RUBY OR DO FORMS IN HTML??? -->
 <!-- <% if @search.nil? %>
   <h3> Need to find a word?</h3>
