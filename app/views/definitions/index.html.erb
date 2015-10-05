@@ -14,7 +14,7 @@
     <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
     <ol>
       <li><%= definition.meaning %></li>
-      <p class="example"><%= definition.example %> </p>
+      <p class="example">"<%= definition.example %>"</p>
     </ol>
       <% if @search.nil? %>
         <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
@@ -26,37 +26,6 @@
 <% end %>
 
 
-
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Word</th>
-      <th>Meaning</th>
-      <th>Part of Speech</th>
-      <th>Example</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @definitions.each do |definition| %>
-      <tr>
-        <td><%= definition.word %></td>
-        <td><%= definition.meaning %></td>
-        <td><%= definition.part_of_speech %></td>
-        <td><%= definition.example %></td>
-        <% if @search.nil? %>
-          <td><%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %></td>
-          <td><%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %></td>
-          <td><%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
 <!-- SHOULD WE STICK WITH ERB/RUBY OR DO FORMS IN HTML??? -->
 <!-- <% if @search.nil? %>
   <h3> Need to find a word?</h3>
