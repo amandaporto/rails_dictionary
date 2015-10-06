@@ -16,15 +16,18 @@
      <ul class="nav navbar-nav">
        <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
        <li><a href="/definitions/new">New Definition</a></li>
-     </ul>
-         <%= form_tag(search_definitions_path, method: "get", :html => {class:"form-inline navbar-form navbar-right"}) do %>
-         <div class="form-group">
 
-         <%= text_field_tag :search, nil, placeholder: "Search Definitions",:html => {class:"form-control"} %>
-         <%= submit_tag "Search Definitions", class:"buttons"%>
-         <% end %>
+         <li><%= form_tag(search_definitions_path, method: "get", :html => {class:"form-inline navbar-form navbar-right"}) do %>
+
+           <div class="form-group">
+
+             <%= text_field_tag :search, nil, placeholder: "Search Definitions",:html => {class:"form-control"} %>
+             <%= submit_tag "Search", class:"buttons"%>
+
+         <% end %></li>
 
        </div>
+       </ul>
    </div> <!-- Navbar-collapse -->
 
 
