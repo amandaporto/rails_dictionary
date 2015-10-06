@@ -7,4 +7,8 @@ class Definition < ActiveRecord::Base
     where("word LIKE ? or meaning LIKE ?", "%#{search}%", "%#{search}%")
   end
 
+  def fancy?
+    word.length > 16
+  end
+
 end

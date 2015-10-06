@@ -50,9 +50,15 @@ class DefinitionTest < ActiveSupport::TestCase
     assert word:"testing"
   end
 
-  test "" do
-    skip
+  test "a word is fancy if it has more than 16 characters" do
+    definition = Definition.new(word: "conceptualization")
 
-    assert
+    assert definition.fancy? , "Word must contain 17 characters to be fancy"
+  end
+
+  test "a word is NOT fancy if it has 16 or less characters" do
+    definition = Definition.new(word: "testing")
+
+    refute definition.fancy? , "Word must contain 16 or less characters to NOT be fancy"
   end
 end
