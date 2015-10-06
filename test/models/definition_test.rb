@@ -10,8 +10,9 @@ class DefinitionTest < ActiveSupport::TestCase
 
     refute definition.valid? , "Definition without a word and meaning are invalid"
   end
+
   test "definitions with a word, meaning, and part of speech are valid" do
-    definition1 = Definition.new(word: "testing", meaning: "catch bugs before they happen", part_of_speech: "verb")
+    definition = Definition.new(word: "testing", meaning: "catch bugs before they happen", part_of_speech: "verb")
 
     assert definition.valid?, "Definition needs word, meaning, and part of speech to be valid"
   end
@@ -35,8 +36,8 @@ class DefinitionTest < ActiveSupport::TestCase
   end
 
   test "words should be unique" do
-    definition1 = Definition.new(word: "testing", meaning: "catch bugs before they happen", part_of_speech: "verb")
-    definition2 = Definition.new(word: "testing", meaning: "companies do it or want to do it", part_of_speech: "verb")
+    definition1 = Definition.create(word: "testing", meaning: "catch bugs before they happen", part_of_speech: "verb")
+    definition2 = Definition.create(word: "testing", meaning: "companies do it or want to do it", part_of_speech: "verb")
 
     # tries to add a second model with the same value, see that it fails.
     refute definition2.valid?, "Should not have the same word multiple times"
@@ -50,6 +51,7 @@ class DefinitionTest < ActiveSupport::TestCase
   end
 
   test "" do
+    skip
 
     assert
   end
