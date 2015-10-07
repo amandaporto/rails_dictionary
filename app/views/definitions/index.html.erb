@@ -1,11 +1,14 @@
-  <div class="col-md-8">
+<div class="col-md-8">
 
-    <p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
+  <h4>Welcome back, <%= current_user.email %>!</h4>
+  <% if @search %>
+    <h4>You searched for: <%= @search %></h4>
+  <% end %>
 
-    <% if @search %>
-      <h4>You searched for: <%= @search %></h4>
-    <% end %>
-
+  <% if @definitions.empty? %>
+    <p class="not_found">Oh no! No results found. =( </p>
+  <% else %>
     <% @definitions.each do |definition| %>
     <div class="panel panel-default">
       <div class="panel-body">
@@ -14,11 +17,9 @@
             <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
             <%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %>
             <%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %>
-          </span></p>
-        
-
+          </span>
         </p>
-        <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+        <p class ="part_of_speech"><%= definition.part_of_speech %></p>
         <ol>
           <li><%= definition.meaning %></li>
           <p class="example">"<%= definition.example %>"</p>
@@ -26,26 +27,29 @@
       </div>
     </div>
     <% end %>
+  <% end %>
 
-  </div> <!-- Main content -->
+</div> <!-- Main content -->
 
-  <div class="sidebar col-md-4">
-    <h2> Discover a New Word </h2>
-    <%definition = @definitions.sample %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p class="word"><%= definition.word %></p>
+<div class="sidebar col-md-4">
+  <h2> Discover a New Word </h2>
+  <%definition = Definition.all.sample %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p class="word"><%= definition.word %></p>
 
-        </p>
-        <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
-        <ol>
-          <li><%= definition.meaning %></li>
-          <p class="example">"<%= definition.example %>"</p>
-        </ol>
-      </div>
+    </p>
+    <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+      <ol>
+        <li><%= definition.meaning %></li>
+        <p class="example">"<%= definition.example %>"</p>
+      </ol>
     </div>
+  </div>
+  <ul>
+    <li><a href="/definitions/new">Add New Definition</a></li>
+  </ul>
 
 
 
-
-  </div> <!-- Sidebar -->
+</div> <!-- Sidebar -->

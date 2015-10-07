@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+
   resources :definitions do
     collection do
       get :search
+    end
+  end
+
+  resources :sessions do
+    collection do
+      delete :destroy
     end
   end
 

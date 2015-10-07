@@ -51,7 +51,7 @@ class DefinitionsControllerTest < ActionController::TestCase
   test "search function should assign string to @search" do
     get :search, search: "rub"
 
-    assert @search = "rub" , "@search should hold terms to be searched"
+    assert @search = "rub", "@search should hold terms to be searched"
   end
 
   test "search function should retrieve word from database" do
