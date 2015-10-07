@@ -33,19 +33,22 @@
 
 <div class="sidebar col-md-4">
   <h2> Discover a New Word </h2>
-  <%definition = Definition.all.sample %>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <p class="word"><%= definition.word %></p>
+  <% definition = Definition.all.sample %>
+  <% # if there isn't a defintion, don't show anything %>
+  <% if definition %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="word"><%= definition.word %></p>
 
-    </p>
-    <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
-      <ol>
-        <li><%= definition.meaning %></li>
-        <p class="example">"<%= definition.example %>"</p>
-      </ol>
+      </p>
+      <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+        <ol>
+          <li><%= definition.meaning %></li>
+          <p class="example">"<%= definition.example %>"</p>
+        </ol>
+      </div>
     </div>
-  </div>
+  <% end %>
   <ul>
     <li><a href="/definitions/new">Add New Definition</a></li>
   </ul>
