@@ -33,7 +33,7 @@
 
 <div class="sidebar col-md-4">
   <h2> Discover a New Word </h2>
-  <% definition = Definition.all.sample %>
+  <% defintion = Definition.order("id").offset(rand(Definition.count)).limit(1) %> %>
   <% # if there isn't a defintion, don't show anything %>
   <% if definition %>
     <div class="panel panel-default">
