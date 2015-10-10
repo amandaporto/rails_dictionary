@@ -1,6 +1,7 @@
 class DefinitionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_random_definition, only: [:index, :search]
   # GET /definitions
   # GET /definitions.json
   def index
@@ -78,5 +79,12 @@ class DefinitionsController < ApplicationController
     def definition_params
       params.require(:definition).permit(:word, :meaning, :search, :part_of_speech, :example)
     end
+
+    def set_random_definition
+      @random_definition = Definition.random
+      Rails.logger.info  "-" * 80 + "    set_random_definition     " + "-" * 80 + @random_definition.inspect
+
+    end
+
 
 end

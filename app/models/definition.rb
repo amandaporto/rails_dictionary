@@ -11,4 +11,8 @@ class Definition < ActiveRecord::Base
     word.length > 16
   end
 
+  def self.random
+    order("id").offset(rand(count)).first
+  end
+
 end

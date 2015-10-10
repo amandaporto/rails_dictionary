@@ -1,7 +1,9 @@
 <div class="col-md-8">
 
   <p id="notice"><%= notice %></p>
-  <h4>Welcome back, <%= current_user.email %>!</h4>
+  <% if user_signed_in? %>
+    <h4>Welcome back, <%= current_user %></h4>
+  <% end %>
   <% if @search %>
     <h4>You searched for: <%= @search %></h4>
   <% end %>
@@ -22,37 +24,30 @@
         <p class ="part_of_speech"><%= definition.part_of_speech %></p>
         <ol>
           <li><%= definition.meaning %></li>
-          <p class="example">"<%= definition.example %>"</p>
+          <p class="example"><%= definition.example %></p>
         </ol>
       </div>
     </div>
     <% end %>
   <% end %>
 
-</div> <!-- Main content -->
+</div>
 
 <div class="sidebar col-md-4">
+
   <h2> Discover a New Word </h2>
-  <% defintion = Definition.order("id").offset(rand(Definition.count)).limit(1) %> %>
-  <% # if there isn't a defintion, don't show anything %>
-  <% if definition %>
     <div class="panel panel-default">
       <div class="panel-body">
-        <p class="word"><%= definition.word %></p>
-
-      </p>
-      <p class ="part_of_speech"><%= definition.part_of_speech %></h5>
+        <p class="word"><%= @random_definition.word %></p>
+        <p class ="part_of_speech"><%= @random_definition.part_of_speech %></p>
         <ol>
-          <li><%= definition.meaning %></li>
-          <p class="example">"<%= definition.example %>"</p>
+          <li><%= @random_definition.meaning %></li>
+          <p class="example"><%= @random_definition.example %></p>
         </ol>
       </div>
     </div>
-  <% end %>
   <ul>
     <li><a href="/definitions/new">Add New Definition</a></li>
   </ul>
 
-
-
-</div> <!-- Sidebar -->
+</div>
