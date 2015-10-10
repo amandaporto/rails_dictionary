@@ -15,6 +15,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'dotenv-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
