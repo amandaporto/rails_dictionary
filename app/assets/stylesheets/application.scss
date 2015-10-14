@@ -18,38 +18,44 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  margin: 0;
+}
+.navbar ul {
+  margin-top: 15px;
+}
 .nav > li > a {
-  padding: 5px 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 5px 0;
+  text-transform: uppercase;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #281805;
-  background-color: #fff;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-top: 10px;
   text-align: center;
-  border: 1px solid #E6E5E0;
+  color: #fff;
+
 }
 .navbar-default .navbar-nav > li > a:hover {
-  color: #EDECE7;
-  background-color: #281805;
-  border-radius: 5px;
-  border: 1px solid #281805;
   display: inline-block;
+  margin-bottom: 0;
+  color: #fff;
+  border-bottom: 1px solid #fff;
 }
- .navbar-default  {
-   background-image: image-url('background_book.png');
-   background-size: cover;
-   background-position: 0 -300px;
-   background-attachment: fixed;
-   border-bottom: solid 2px #2d434c;
-   min-height: 420px;
-   box-shadow: 0 2px 3px #38474E;
+ .navbar-default{
+   background-color: #281805;
+   min-height: 80px;
+   margin-bottom: 0;
+   border: none;
  }
-
+ .navbar-nav {
+   border: none;
+ }
+.navbar {
+  border-radius: 0;
+}
 textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
-    border-color: rgba(40, 24, 5, 0.8);
-    box-shadow: 0 1px 1px rgba(40, 24, 5, 0.075) inset, 0 0 8px rgba(40, 24, 5, 0.6);
+    border-color: rgba(252, 201, 99, 0.8);
+    box-shadow: 0 1px 1px rgba(252, 201, 99, 0.075) inset, 0 0 8px rgba(252, 201, 99, 0.6);
     outline: 0 none;
 }
 .panel {
@@ -58,6 +64,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 }
 .wrapper {
   overflow: hidden;
+  margin: 0;
 }
 label {
   display: inline-block;
@@ -74,20 +81,7 @@ form > h2 {
 .signup {
   margin: 10px 0;
 }
-.btn-primary {
-  margin-top: 20px;
-  color: #EDECE7;
-  background-color: #281805;
-  border-radius: 5px;
-  border: 1px solid #281805;
-  margin-bottom: 200px;
-}
-.btn-primary:hover {
-  color: #281805;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #281805;
-}
+
 .center {
   text-align: center;
 }

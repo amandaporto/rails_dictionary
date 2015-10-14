@@ -6,12 +6,13 @@ form {
   padding: 20px 0;
 }
 footer {
-  background-color: #94CE5F;
+  background-color: #281805;
   height: 100px;
   padding-top: 20px;
   border-top: solid 2px #DEDEDE;
   clear: both;
   margin-top: 50px;
+  color: #fff;
 }
 
 .example {
@@ -53,24 +54,28 @@ footer {
   padding: 10px 0;
 }
 .buttons {
-  padding: 1px 10px;
-  color: #fff;
-  background-color: #281805;
-  border-radius: 5px;
   text-align: center;
-  border: 1px solid #281805;
+  background-color: #281805;
+  border: 1px solid #fff;
+;
+  color: #fff;
+  text-transform: uppercase;
 }
 .buttons:hover {
-  padding: 1px 10px;
-  color: #281805;
-  background-color: #fff;
-  border-radius: 5px;
   text-align: center;
-  border: 1px solid #281805;
+  border: 1px solid #fff;
 }
 .not_found {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 300px;
   font-style: italic;
+}
+.header_img {
+  position: relative;
+  height: auto;
+  margin-bottom: 40px;
+}
+.full_img {
+  width: 100%;
 }
