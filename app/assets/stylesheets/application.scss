@@ -60,7 +60,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 }
 .panel {
   margin: 20px;
-  border-left: 5px solid #94CE5F;
+  border-left: 5px solid #F58020;
 }
 .wrapper {
   overflow: hidden;
@@ -84,4 +84,7 @@ form > h2 {
 
 .center {
   text-align: center;
+}
+.panel-body {
+  background-color: #fff;
 }

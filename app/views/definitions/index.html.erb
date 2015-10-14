@@ -1,6 +1,7 @@
 <div class="col-md-7">
 
   <p id="notice"><%= notice %></p>
+
   <% if user_signed_in? %>
     <h4>Welcome back, <%= current_user %></h4>
   <% end %>
@@ -11,31 +12,19 @@
   <% if @definitions.empty? %>
     <p class="not_found">Oh no! No results found. =( </p>
   <% else %>
-    <% @definitions.each do |definition| %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p class="word"><%= definition.word %>
-          <span class="edit_buttons">
-            <%= link_to '', definition, class: "glyphicon glyphicon-info-sign" %>
-            <%= link_to '', edit_definition_path(definition),class: "glyphicon glyphicon-pencil" %>
-            <%= link_to '', definition, method: :delete, class: "glyphicon glyphicon-trash", data: { confirm: 'Are you sure?' } %>
-          </span>
-        </p>
-        <p class ="part_of_speech"><%= definition.part_of_speech %></p>
-        <ol>
-          <li><%= definition.meaning %></li>
-          <p class="example"><%= definition.example %></p>
-        </ol>
-      </div>
-    </div>
-    <% end %>
+    <h2 class="titles"> Browse Our Dictionary </h2>
   <% end %>
+
+  <div id="definitions">
+    <%= render @definitions %>
+  </div>
 
 </div>
 
 <div class="sidebar col-md-5">
 
-  <h2> Discover a New Word </h2>
+  <h2 class="titles"> Word Challenge! </h2>
+  <h5 class="titles"> Try to use it today </h5>
     <div class="panel panel-default">
       <div class="panel-body">
         <p class="word"><%= @random_definition.word %></p>
@@ -47,7 +36,7 @@
       </div>
     </div>
   <ul>
-    <li><a href="/definitions/new">Add New Definition</a></li>
+    <li><a href="/definitions/new" class="buttons standalone">Add New Definition</a></li>
   </ul>
 
 </div>

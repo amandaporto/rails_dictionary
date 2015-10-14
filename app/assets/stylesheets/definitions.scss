@@ -14,7 +14,10 @@ footer {
   margin-top: 50px;
   color: #fff;
 }
-
+ul {
+  list-style: none;
+  text-align: center;
+}
 .example {
   font-style: italic;
   color: gray;
@@ -27,14 +30,17 @@ footer {
 }
 .word {
   font-size: 20px;
-  color: #94CE5F;
+  color: #F58020;
   font-weight: bold;
 }
 .edit_buttons {
-  float: right;
+    float: right;
+}
+.edit_buttons > a{
+  color: #565656;
 }
 .edit_buttons > a:hover {
-  color: #94CE5F;
+  color: #F58020;
   text-decoration: none;
 }
 .sidebar {
@@ -57,13 +63,15 @@ footer {
   text-align: center;
   background-color: #281805;
   border: 1px solid #fff;
-;
   color: #fff;
   text-transform: uppercase;
 }
 .buttons:hover {
   text-align: center;
-  border: 1px solid #fff;
+  border: 1px solid #F58020;
+  background-color: #F58020;
+  color: #fff;
+
 }
 .not_found {
   text-align: center;
@@ -74,8 +82,27 @@ footer {
 .header_img {
   position: relative;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .full_img {
   width: 100%;
+}
+.titles {
+  margin-bottom: 40px;
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  text-align: center;
+  color: #565656;
+}
+.standalone {
+  padding: 10px 15px;
+  text-decoration: none;
+}
+.standalone:hover {
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 1px solid #fff;
+  background-color: #F58020;
+  color: #fff;
+
 }

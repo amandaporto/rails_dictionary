@@ -11,8 +11,6 @@ class DefinitionsController < ApplicationController
   def search
     @search = params[:search]
     @definitions = Definition.search(@search)
-
-    render :index
   end
 
   # GET /definitions/1
