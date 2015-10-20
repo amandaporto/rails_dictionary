@@ -16,17 +16,8 @@
      <ul class="nav navbar-nav">
        <li><%= link_to "Login", new_user_session_path %></li>
        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?'}%></li>
-
-         <li>
-
-           <div class="form-group">
-
-             <%= text_field_tag :search, nil, placeholder: "Search Definitions",:html => {class:"form-control"} %>
-
-         </li>
-
-       </div>
-       </ul>
+       <li><div class="form-inline navbar-form navbar-right"><%= text_field_tag :search, nil, placeholder: "Search Definitions",:html => {class:"form-control"} %></div></li>
+     </ul>
    </div> <!-- Navbar-collapse -->
 
  </div> <!--Container-fluid -->

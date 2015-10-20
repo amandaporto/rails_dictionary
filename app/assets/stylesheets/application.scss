@@ -21,11 +21,14 @@
 body {
   margin: 0;
 }
+.container-fluid {
+  height: 75px;
+}
 .navbar ul {
   margin-top: 15px;
 }
 .nav > li > a {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-right: 20px;
   padding: 5px 0;
   text-transform: uppercase;
@@ -43,8 +46,6 @@ body {
 }
  .navbar-default{
    background-color: #281805;
-   min-height: 80px;
-   margin-bottom: 0;
    border: none;
  }
  .navbar-nav {
@@ -87,4 +88,13 @@ form > h2 {
 }
 .panel-body {
   background-color: #fff;
+}
+.spinner {
+  background-image: image-url("spinner.gif");
+  background-position: center;
+  height: 32px;
+  background-repeat: no-repeat;
+}
+.hide {
+  background-image: none;
 }

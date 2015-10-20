@@ -5,6 +5,10 @@ class Definition < ActiveRecord::Base
 
   def self.search(search)
     where("word LIKE ? or meaning LIKE ?", "%#{search}%", "%#{search}%")
+
+    # switch development to postgres or attempt to fix below?
+    # where("lower(#{resource_class.table_name}.#{key}) LIKE lower(?)", "%#{search}%")
+
   end
 
   def fancy?
